@@ -13,7 +13,7 @@
   "max_limits_column",
   "max_users",
   "max_invoices",
-  "max_quotes",
+  "max_quotations",
   "max_products",
   "available_limit_column",
   "av_users",
@@ -39,36 +39,27 @@
   {
    "fieldname": "max_limits_column",
    "fieldtype": "Column Break",
-   "label": "Max Limits"
+   "label": "Available"
   },
   {
    "fieldname": "max_users",
    "fieldtype": "Int",
-   "label": "Users",
-   "read_only": 1
+   "label": "Users"
   },
   {
    "fieldname": "max_invoices",
    "fieldtype": "Int",
-   "label": "Invoices",
-   "read_only": 1
-  },
-  {
-   "fieldname": "max_quotes",
-   "fieldtype": "Int",
-   "label": "Quotes",
-   "read_only": 1
+   "label": "Invoices"
   },
   {
    "fieldname": "max_products",
    "fieldtype": "Int",
-   "label": "Products",
-   "read_only": 1
+   "label": "Products"
   },
   {
    "fieldname": "available_limit_column",
    "fieldtype": "Column Break",
-   "label": "Available Limit"
+   "label": "Used"
   },
   {
    "fieldname": "av_users",
@@ -103,11 +94,16 @@
    "fieldtype": "Data",
    "label": "Plan Type",
    "read_only": 1
+  },
+  {
+   "fieldname": "max_quotations",
+   "fieldtype": "Int",
+   "label": "Quotes"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-12-08 20:55:38.214614",
+ "modified": "2024-12-18 22:22:15.976797",
  "modified_by": "Administrator",
  "module": "Payments",
  "name": "Quota usage",

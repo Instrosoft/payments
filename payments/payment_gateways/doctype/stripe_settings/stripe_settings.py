@@ -270,16 +270,16 @@ class StripeSettings(Document):
 						self.data.reference_doctype, self.data.reference_docname
 					).run_method("on_payment_authorized", self.flags.status_changed_to)
 
-					# get_customer details
-					buyer_details = self.data.reference_name.as_dict()
-					customer = buyer_details['customer']
+					# # get_customer details
+					# buyer_details = self.data.reference_name.as_dict()
+					# customer = buyer_details['customer']
 
-					# update quota 
-					try: 
-						update_quota_usage(customer, "Basic")
-						frappe.msgprint("Payment Done, Quota Updated.")
-					except Exception as e:
-						frappe.throw(e)
+					# # update quota 
+					# try: 
+					# 	update_quota_usage(customer, "Basic")
+					# 	frappe.msgprint("Payment Done, Quota Updated.")
+					# except Exception as e:
+					# 	frappe.throw(e)
 
 				except Exception:
 					frappe.log_error(frappe.get_traceback())

@@ -1,0 +1,116 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:plan_name",
+ "creation": "2024-11-27 18:43:07.066843",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "plan_name",
+  "plan_type",
+  "column_break_wwhz",
+  "active",
+  "users_section",
+  "max_users",
+  "invoices_section",
+  "max_invoices",
+  "products_section",
+  "max_products",
+  "quotations_section",
+  "max_quotations"
+ ],
+ "fields": [
+  {
+   "fieldname": "plan_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Plan Name",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "default": "Basic",
+   "fieldname": "plan_type",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Plan Type",
+   "options": "Basic\nStandard",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_wwhz",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "active",
+   "fieldtype": "Check",
+   "label": "Active"
+  },
+  {
+   "fieldname": "users_section",
+   "fieldtype": "Section Break",
+   "label": "Users"
+  },
+  {
+   "fieldname": "max_users",
+   "fieldtype": "Int",
+   "label": "Max Users"
+  },
+  {
+   "fieldname": "invoices_section",
+   "fieldtype": "Section Break",
+   "label": "Invoices"
+  },
+  {
+   "fieldname": "max_invoices",
+   "fieldtype": "Int",
+   "label": "Max Invoices"
+  },
+  {
+   "fieldname": "products_section",
+   "fieldtype": "Section Break",
+   "label": "Products"
+  },
+  {
+   "fieldname": "max_products",
+   "fieldtype": "Int",
+   "label": "Max Products"
+  },
+  {
+   "fieldname": "quotations_section",
+   "fieldtype": "Section Break",
+   "label": "Quotations"
+  },
+  {
+   "fieldname": "max_quotations",
+   "fieldtype": "Int",
+   "label": "Max Quotations"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-11-27 19:06:12.906969",
+ "modified_by": "Administrator",
+ "module": "Payments",
+ "name": "Subscription Module",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

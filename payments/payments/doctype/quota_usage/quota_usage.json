@@ -1,0 +1,129 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:company",
+ "creation": "2024-11-27 18:17:48.816743",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "company",
+  "column_break_hhxv",
+  "plan_type",
+  "quota_details_section",
+  "max_limits_column",
+  "max_users",
+  "max_invoices",
+  "max_quotations",
+  "max_products",
+  "available_limit_column",
+  "av_users",
+  "av_invoices",
+  "av_quotes",
+  "av_products"
+ ],
+ "fields": [
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Merchant Profile Setting",
+   "options": "Company",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "quota_details_section",
+   "fieldtype": "Section Break",
+   "label": "Quota Details"
+  },
+  {
+   "fieldname": "max_limits_column",
+   "fieldtype": "Column Break",
+   "label": "Available"
+  },
+  {
+   "fieldname": "max_users",
+   "fieldtype": "Int",
+   "label": "Users"
+  },
+  {
+   "fieldname": "max_invoices",
+   "fieldtype": "Int",
+   "label": "Invoices"
+  },
+  {
+   "fieldname": "max_products",
+   "fieldtype": "Int",
+   "label": "Products"
+  },
+  {
+   "fieldname": "available_limit_column",
+   "fieldtype": "Column Break",
+   "label": "Used"
+  },
+  {
+   "fieldname": "av_users",
+   "fieldtype": "Int",
+   "label": "Users",
+   "read_only": 1
+  },
+  {
+   "fieldname": "av_invoices",
+   "fieldtype": "Int",
+   "label": "Invoices",
+   "read_only": 1
+  },
+  {
+   "fieldname": "av_quotes",
+   "fieldtype": "Int",
+   "label": "Quotes",
+   "read_only": 1
+  },
+  {
+   "fieldname": "av_products",
+   "fieldtype": "Int",
+   "label": "Products",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_hhxv",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "plan_type",
+   "fieldtype": "Data",
+   "label": "Plan Type",
+   "read_only": 1
+  },
+  {
+   "fieldname": "max_quotations",
+   "fieldtype": "Int",
+   "label": "Quotes"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-12-18 22:22:15.976797",
+ "modified_by": "Administrator",
+ "module": "Payments",
+ "name": "Quota usage",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

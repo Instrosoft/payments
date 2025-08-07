@@ -237,6 +237,26 @@ class StripeSettings(Document):
 
 		return self.finalize_request()
 
+	def update_quota_usage(customer, plan):
+		# check current values
+		av_users = available_users = frappe.db.get_value("Quote usage", customer, "av_users")
+		av_products = available_users = frappe.db.get_value("Quote usage", customer, "av_products")
+		av_invoices = available_users = frappe.db.get_value("Quote usage", customer, "av_invoices")
+		av_quotes = available_users = frappe.db.get_value("Quote usage", customer, "av_quotes")
+
+		# update quota accodringly 
+		if plan == "Basic":
+			frappe.db.set_value("Quota usage", customer, "max_users", av_users + 2)
+			frappe.db.set_value("Quota usage", customer, "max_products", av_products + 1200)
+			frappe.db.set_value("Quota usage", customer, "max_invoices", av_invoices + 1200)
+			frappe.db.set_value("Quota usage", customer, "max_quotes", av_quotes + 1200)
+		elif plan == "Standard":
+			frappe.db.set_value("Quota usage", customer, "max_users", av_users + 5)
+			frappe.db.set_value("Quota usage", customer, "max_products", av_products + 3000)
+			frappe.db.set_value("Quota usage", customer, "max_invoices", av_invoices + 3000)
+			frappe.db.set_value("Quota usage", customer, "max_quotes", av_quotes + 3000)
+
+
 	def finalize_request(self):
 		redirect_to = self.data.get("redirect_to") or None
 		redirect_message = self.data.get("redirect_message") or None
@@ -249,6 +269,18 @@ class StripeSettings(Document):
 					custom_redirect_to = frappe.get_doc(
 						self.data.reference_doctype, self.data.reference_docname
 					).run_method("on_payment_authorized", self.flags.status_changed_to)
+
+					# # get_customer details
+					# buyer_details = self.data.reference_name.as_dict()
+					# customer = buyer_details['customer']
+
+					# # update quota 
+					# try: 
+					# 	update_quota_usage(customer, "Basic")
+					# 	frappe.msgprint("Payment Done, Quota Updated.")
+					# except Exception as e:
+					# 	frappe.throw(e)
+
 				except Exception:
 					frappe.log_error(frappe.get_traceback())
 
